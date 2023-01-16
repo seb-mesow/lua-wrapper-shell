@@ -1,0 +1,55 @@
+===== Tools ==========
+For profiling we use the tool multitime:
+https://github.com/ltratt/multitime
+
+This tool is not available as a package in the MSYS2 ecosystem.
+It must be buil in the MSYS2 shell! (not int the shells MSYS2 / UCRT64 or MSYS2 / MINGW)
+Therefore you need to install following three packages in the MSYS2 shell:
+gcc
+msys2-runtime-devel
+autotools
+
+The follow the instructions in the provided file INSTALL
+
+===== Environment ==========
+lua-5.3.6.tar.gz unpacked
+luarocks-3.9.1-win32.zip unpacked
+
+Lua installed
+LuaRocks installed
+
+===== Subshell ==========
+Command:
+$ multitime -q -n 10 bash ./lua-wrapper-shell.bash 5.3 -- -c ''
+
+date        time    mean runtime in seconds
+2022-12-29  15:18   1.629 -- 1.678
+    - with md5sum childprocesses
+    - with cp childprocesses
+    - with mv childprocesses
+    - with multiple rm childprocesses
+
+date        time    mean runtime in seconds
+2022-12-29  17:14   1.627 -- 1.651
+    - with md5sum childprocesses
+    - with cp childprocesses
+    - with mv childprocesses
+    - with single rm childprocess
+
+===== Files Listing ==========
+Command:
+$ multitime -q -n 10 bash ./lua-wrapper-shell.bash 5.3 -l
+
+date        time    mean runtime in seconds
+2022-12-29  15:27   0.810 -- 0.825
+    - with md5sum childprocesses
+    - with cp childprocesses
+    - with mv childprocesses
+    - with multiple rm childprocesses
+
+date        time    mean runtime in seconds
+2022-12-29  17:22   0.803 -- 0.835 -- 0.868
+    - with md5sum childprocesses
+    - with cp childprocesses
+    - with mv childprocesses
+    - with single rm childprocess

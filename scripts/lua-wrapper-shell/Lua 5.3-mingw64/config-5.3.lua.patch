@@ -1,0 +1,24 @@
+--- config-5.3.lua
++++ config-5.3.lua.patched
+@@ -8,12 +8,14 @@
+ }
+ variables = {
+     MSVCRT = 'm',   -- make MinGW use MSVCRT.DLL as runtime
+-    LUALIB = 'lua53.dll',
+-    CC = [[C:\msys2\mingw64\bin\gcc.exe]],
+-    MAKE = [[C:\msys2\mingw64\bin\gnatmake.exe]],
+-    RC = [[C:\msys2\mingw64\bin\windres.exe]],
+-    LD = [[C:\msys2\mingw64\bin\gcc.exe]],
+-    AR = [[C:\msys2\mingw64\bin\ar.exe]],
+-    RANLIB = [[C:\msys2\mingw64\bin\ranlib.exe]],
++    LUA    = 'lua',
++    -- use the tools delivered by the MSYS 2 / MINGW64 environment
++    -- instead of those bundled with the LuaRocks Windows install sources
++    CP     = 'cp',
++    FIND   = 'find',
++    LS     = 'ls',
++    MD5SUM = 'md5sum',
++    -- SEVENZ = '7z',
++    WGET   = 'wget',
+ }
+ verbose = false   -- set to 'true' to enable verbose output

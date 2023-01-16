@@ -1,0 +1,21 @@
+rocks_trees = {
+    { name = [[user]],
+         root    = home..[[/luarocks]],
+    },
+    { name = [[system]],
+         root    = [[C:\Program Files\LuaRocks\Lua 5.4-ucrt64]],
+    },
+}
+variables = {
+    MSVCRT = 'ucrtbase',
+    LUA    = 'lua',
+    -- use the tools delivered by the MSYS 2 / UCRT64 environment
+    -- instead of those bundled with the LuaRocks Windows install sources
+    CP     = 'cp',
+    FIND   = 'find',
+    LS     = 'ls',
+    MD5SUM = 'md5sum',
+    -- SEVENZ = '7z',
+    WGET   = 'wget',
+}
+verbose = false   -- set to 'true' to enable verbose output

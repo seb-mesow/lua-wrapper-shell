@@ -1,0 +1,26 @@
+--- config-5.4.lua
++++ config-5.4.lua.patched
+@@ -7,13 +7,15 @@
+     },
+ }
+ variables = {
+-    MSVCRT = 'MSVCR80',
+-    LUALIB = 'lua54.dll',
+-    CC = [[C:\msys2\ucrt64\bin\gcc.exe]],
+-    MAKE = [[C:\msys2\ucrt64\bin\gnatmake.exe]],
+-    RC = [[C:\msys2\ucrt64\bin\windres.exe]],
+-    LD = [[C:\msys2\ucrt64\bin\gcc.exe]],
+-    AR = [[C:\msys2\ucrt64\bin\ar.exe]],
+-    RANLIB = [[C:\msys2\ucrt64\bin\ranlib.exe]],
++    MSVCRT = 'ucrtbase',
++    LUA    = 'lua',
++    -- use the tools delivered by the MSYS 2 / UCRT64 environment
++    -- instead of those bundled with the LuaRocks Windows install sources
++    CP     = 'cp',
++    FIND   = 'find',
++    LS     = 'ls',
++    MD5SUM = 'md5sum',
++    -- SEVENZ = '7z',
++    WGET   = 'wget',
+ }
+ verbose = false   -- set to 'true' to enable verbose output

@@ -1,0 +1,28 @@
+--- install.bat
++++ install.bat.patched
+@@ -812,7 +812,7 @@
+ 	i = i + 1
+ end
+ 
+-print(S"LuaRocks $VERSION.x installer.\n")
++print(S"\nLuaRocks $VERSION.x installer.\n")
+ 
+ parse_options(config)
+ 
+@@ -939,6 +939,7 @@
+ 
+ if PROMPT then
+ 	print("\nPress <ENTER> to start installing, or press <CTRL>+<C> to abort. Use install /? for installation options.")
++	io.flush()
+ 	io.read()
+ end
+ 
+@@ -1224,7 +1225,5 @@
+   LUA_CPATH:   $TREE_CMODULE\?.dll
+ 
+ Note that the %APPDATA% element in the paths above is user specific and it MUST be replaced by its actual value.
+-For the current user that value is: $APPDATA.
+-
+-]])
++For the current user that value is: $APPDATA.]])
+ os.exit(0)

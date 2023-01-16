@@ -1,0 +1,13 @@
+--- hardcoded.lua
++++ hardcoded.lua.patched
+@@ -2,8 +2,8 @@
+    LUA_INCDIR=[[C:\Program Files\Lua\5.3-mingw64\include]],
+    LUA_LIBDIR=[[C:\Program Files\Lua\5.3-mingw64\bin]],
+    LUA_BINDIR=[[C:\Program Files\Lua\5.3-mingw64\bin]],
+-   LUA_INTERPRETER=[[lua.exe]],
+-   SYSTEM = [[mingw]],
++   LUA_INTERPRETER=[[lua]],
++   SYSTEM = [[msys2_mingw_w64]],
+    PROCESSOR = [[x86_64]],
+    PREFIX = [[C:\Program Files\LuaRocks\Lua 5.3-mingw64]],
+    SYSCONFDIR = [[C:\Program Files\LuaRocks\Lua 5.3-mingw64]],
